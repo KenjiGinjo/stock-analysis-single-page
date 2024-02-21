@@ -1,5 +1,5 @@
 import { createRouter } from "./_utils";
-import { IconDemo } from "@/assets/icon/IconDemo";
+import { IconDemo } from "@/assets/icons/IconDemo";
 
 const monthlyRevenue = createRouter({
   path: "monthly-revenue",

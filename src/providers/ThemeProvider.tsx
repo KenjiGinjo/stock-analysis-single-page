@@ -12,7 +12,6 @@ type AppThemeProviderProps = {
 };
 function AppThemeProvider(props: AppThemeProviderProps) {
   const [mode, setMode] = useState<StyleThemeModeEnum>(CONST.DEFAULT_THEME);
-
   const toggleTheme = () => {
     setMode((prev) =>
       prev === StyleThemeModeEnum.Light
@@ -26,6 +25,9 @@ function AppThemeProvider(props: AppThemeProviderProps) {
       mode: mode,
       ...CONST.theme[mode].MATERIAL_UI.palette,
     },
+    shape: {
+      borderRadius: 4,
+    },
   });
 
   useEffect(() => {
@@ -38,7 +40,14 @@ function AppThemeProvider(props: AppThemeProviderProps) {
     <ThemeContext.Provider value={{ mode, toggleTheme }}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <IconButton onClick={toggleTheme} className="fixed bottom-1 right-1">
+        <IconButton
+          onClick={toggleTheme}
+          style={{
+            position: "fixed",
+            bottom: 16,
+            right: 16,
+          }}
+        >
           {mode === StyleThemeModeEnum.Dark ? (
             <DarkModeIcon fontSize="small" />
           ) : (

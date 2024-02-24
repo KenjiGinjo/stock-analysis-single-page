@@ -9,4 +9,5 @@ const router = {
   },
 };
 
-export default checkDuplicatePaths(router);
+checkDuplicatePaths(router);
+export default router;

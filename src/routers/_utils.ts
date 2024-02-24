@@ -1,11 +1,11 @@
 import type { ReactNode } from "react";
 
-type Router = {
+export type RouterConfig = {
   path: string;
   name: string;
   icon?: ReactNode;
   summary?: string;
-  children?: Record<string, Router>;
+  children?: Record<string, RouterConfig>;
 };
 
 export function createRouter<T>(router: T): T {
@@ -19,14 +19,14 @@ export function createRouter<T>(router: T): T {
 
   return router;
 }
-export function checkDuplicatePaths(routerConfig: Router) {
+export function checkDuplicatePaths(routerConfig: RouterConfig) {
   const pathSet = new Set();
   const duplicates: any = [];
-  const traverseChildren = (router: Router) => {
+  const traverseChildren = (router: RouterConfig) => {
     if (router.children) {
       const basePath = router.path;
       Object.values(router.children).forEach((childRouter) => {
-        const fullPath = `${basePath}/${childRouter.path}`;
+        const fullPath = `${basePath}${childRouter.path}`;
         if (pathSet.has(fullPath)) {
           duplicates.push(fullPath);
         } else {

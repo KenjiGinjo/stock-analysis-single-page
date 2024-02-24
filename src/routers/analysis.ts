@@ -2,10 +2,52 @@ import { createRouter } from "./_utils";
 import { IconDemo } from "@/assets/icons/IconDemo";
 
 const monthlyRevenue = createRouter({
-  path: "monthly-revenue",
+  path: "/report",
   name: "財務報表",
   summary: "財務報表",
   icon: IconDemo({ letter: "C", color: "434343" }),
+  children: {
+    eps: {
+      path: "/eps",
+      name: "每股盈餘",
+      summary: "每股盈餘",
+    },
+    nav: {
+      path: "/nav",
+      name: "每股淨值",
+      summary: "每股淨值",
+    },
+    incomeStatement: {
+      path: "/income-statement",
+      name: "損益表",
+      summary: "損益表",
+    },
+    assets: {
+      path: "/assets",
+      name: "總資產",
+      summary: "總資產",
+    },
+    liabilitiesAndEquity: {
+      path: "/liabilities-and-equity",
+      name: "負債和股東權益",
+      summary: "負債和股東權益",
+    },
+    cashFlowStatement: {
+      path: "/cash-flow-statement",
+      name: "現金流量表",
+      summary: "現金流量表",
+    },
+    dividendPolicy: {
+      path: "/dividend-policy",
+      name: "股利政策",
+      summary: "股利政策",
+    },
+    eReport: {
+      path: "/e-report",
+      name: "電子書",
+      summary: "電子書",
+    },
+  },
 });
 
 export const analysis = createRouter({
@@ -14,7 +56,7 @@ export const analysis = createRouter({
   summary: "分析",
   children: {
     news: {
-      path: "/",
+      path: "/news",
       name: "最新動態",
       summary: "最新動態",
       icon: IconDemo({ letter: "B", color: "434343" }),

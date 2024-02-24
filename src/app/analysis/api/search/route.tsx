@@ -14,7 +14,7 @@ export const GET = zValidation(vAnalysisSearchQuery, async (req, res) => {
       return {
         displayContent: `${item.ticker} ${item.name}`,
         ticker: item.ticker,
-        url: `${CONST.BASE_URL}/analysis/${item.ticker}`,
+        url: `${CONST.BASE_URL}/analysis/${item.ticker}/news`,
       };
     });
   return NextResponse.json(data);

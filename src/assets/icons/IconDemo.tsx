@@ -3,5 +3,20 @@ type IconDemoProps = {
   color: string;
 };
 export function IconDemo(props: IconDemoProps) {
-  return <div>{props.letter}</div>;
+  return (
+    <div
+      style={{
+        width: "28px",
+        height: "28px",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: "20px",
+        color: `#${props.color}`,
+        fontWeight: "normal",
+      }}
+    >
+      {props.letter}
+    </div>
+  );
 }

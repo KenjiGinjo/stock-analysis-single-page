@@ -64,6 +64,7 @@ export function SearchInput() {
     if (initialRender) {
       setInitialRender(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyword]);
   const goAnalysisPage = () => {
     if (!input) return;

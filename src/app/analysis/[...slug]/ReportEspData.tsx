@@ -38,6 +38,7 @@ export function ReportEspData(props: ReportEspDateProps) {
     if (initialRender) {
       setInitialRender(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [year]);
   useEffect(() => {
     if (!initialRender2 && rqData?.body) {
@@ -46,6 +47,7 @@ export function ReportEspData(props: ReportEspDateProps) {
     if (initialRender2) {
       setInitialRender2(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rqData]);
 
   return (

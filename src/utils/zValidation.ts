@@ -6,7 +6,7 @@ export function zValidation<T extends ZodSchema>(
   next: (
     req: Omit<NextRequest, "query" | "body"> & { v: z.infer<T> },
     res: NextResponse
-  ) => unknown | Promise<unknown>
+  ) => any | Promise<any>
 ) {
   return async (req: NextRequest, res: NextResponse) => {
     const { searchParams } = new URL(req.url);

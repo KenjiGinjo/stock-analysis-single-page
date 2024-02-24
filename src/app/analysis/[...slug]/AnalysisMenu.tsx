@@ -17,7 +17,7 @@ export function AnalysisMenu(props: AnalysisMenuProps) {
     (r) => r.path === `/${props.path}`
   );
   return (
-    <Box sx={{ mt: 2, display: "flex" }}>
+    <Box sx={{ mt: 2, mr: 2, display: "flex" }}>
       <Box>
         {Object.entries(arc).map(([key, value]: [string, any]) => {
           const firstChild: any =

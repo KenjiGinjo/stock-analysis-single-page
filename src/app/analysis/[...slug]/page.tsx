@@ -1,4 +1,3 @@
-import Box from "@mui/material/Box";
 import { AnalysisMenu } from "./AnalysisMenu";
 import { ReportEsp } from "./ReportEsp";
 import router from "@/routers";
@@ -17,9 +16,9 @@ export default function Page({ params }: { params: { slug: string[] } }) {
     return <BlockNone />;
   };
   return (
-    <Box sx={{ mt: 2, display: "flex", flexGrow: 1 }}>
+    <div style={{ marginTop: 20, display: "flex", flexGrow: 1 }}>
       <AnalysisMenu ticker={ticker} path={path} subPath={subPath} />
       <CurrentMain />
-    </Box>
+    </div>
   );
 }

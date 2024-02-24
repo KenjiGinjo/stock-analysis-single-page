@@ -11,7 +11,7 @@ const AppBar = styled("div")(({ theme }) => ({
   position: "relative",
   width: "100%",
   height: "64px",
-  backgroundColor: theme.palette.background.default,
+  backgroundColor: theme.palette.background.paper,
   borderBottom: `1px solid ${theme.palette.divider}`,
 }));
 

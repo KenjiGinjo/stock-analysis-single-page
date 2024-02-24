@@ -16,6 +16,9 @@ const CONST = {
           primary: {
             main: "#0586F4",
           },
+          background: {
+            default: "#ededed",
+          },
         } as PaletteOptions,
       },
     },
@@ -28,6 +31,9 @@ const CONST = {
         palette: {
           primary: {
             main: "#ffffff",
+          },
+          background: {
+            default: "#121212",
           },
         },
       },

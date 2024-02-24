@@ -12,11 +12,12 @@ import { ReportEspData } from "./ReportEspData";
 type ReportEspProps = {
   ticker: string;
 };
-const getCompanyByTricker = (ticker: string) => {
-  return db.stock.findByTicker(ticker)[0];
+const getCompanyByTricker = async (ticker: string) => {
+  return await db.stock.findByTicker(ticker);
 };
 export async function ReportEsp(props: ReportEspProps) {
-  const company = getCompanyByTricker(props.ticker);
+  const c = await getCompanyByTricker(props.ticker);
+  const company = c[0];
   const fiveYearsAgo = dateFormat(subYears(new Date(), 5), "Y-M-D");
   const d = await getTaiwanStockMonthRevenue({
     ticker: props.ticker,
